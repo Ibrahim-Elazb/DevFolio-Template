@@ -1,0 +1,476 @@
+/* --------------------------------- Utilities ------------------------------------ */
+.section-heading{
+text-align: center;
+padding-bottom: 5rem;
+}
+
+.section-heading h2{
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.5rem;
+  text-transform: uppercase;
+}
+
+.section-heading p{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  color: var(--bs-secondary);
+  padding: 1rem 0;
+  position: relative;
+  width: fit-content;
+  margin: auto;
+}
+
+.section-heading p::after{
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 15%;
+  height: .25rem;
+  background-color: var(--bs-primary);
+}
+
+
+
+/* --------------------------------- Sub-DropDown Menu ------------------------------------ */
+#mainNavbarDropdown>.dropdown-menu {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(50%) scale(0);
+}
+
+
+#mainNavbarDropdown:hover>.dropdown-menu {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition: all .3s linear;
+}
+
+#subNavbarDropdown {
+    position: relative;
+  }
+
+  .dropdown-menu li a:hover{
+    color: var(--primary-color);
+    background-color: antiquewhite;
+  }
+
+  .dropdown-menu .dropdown-submenu {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    left: 150%;
+    top: 10%;
+    transform: scale(0);
+    transition: all .3s linear;
+  }
+
+  .dropdown-menu > li:hover > .dropdown-submenu {
+    left: 100%;
+    visibility: visible;
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  @media (max-width:991.98px) {
+    .navbar{
+      background-color: var(--bs-dark);
+    }
+
+    #mainNavbarDropdown>.dropdown-menu{
+      display: none;
+    }
+
+    #mainNavbarDropdown:hover>.dropdown-menu {
+      display: block;
+    }
+
+    .dropdown-menu .dropdown-submenu{
+      display: none;
+      position:static;
+    }
+
+    .dropdown-menu > li:hover > .dropdown-submenu {
+      display: block;
+    }
+  }
+
+  /* ------------------------------------------ NavBar Items --------------------------------------------- */
+  .nav-item{
+      position: relative;
+  }
+
+  .nav-item ul li a{
+      color: var(--bs-light);
+      transition: all .3s ease-out;
+  }
+
+  .nav-item ul li a:hover{
+    background-color: var(--bs-light);
+    color: var(--bs-dark);
+}
+
+  .nav-item::after{
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: all .5s ease-out;
+}
+
+.nav-item:hover::after{
+    width: 100%;
+}
+
+  /* ------------------------------------------ Hero Page --------------------------------------------- */
+ #hero-section{
+      background: url(../images/intro-bg.jpg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-attachment: fixed;
+      background-position: center;
+      width: 100%;
+      height: 100vh;
+      position: relative;
+  }
+
+  #hero-section::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .5);
+  }
+
+  #hero-section *{
+      z-index: 2;
+  }
+
+  #hero-section h1{
+      font-size: 4.5rem;
+      text-align: center;
+  }
+
+  #animated-text a{
+      text-decoration: none;
+
+  }
+
+
+    /* ------------------------------------------ About Page --------------------------------------------- */
+
+    .about-text  h5{
+      position: relative;
+      width: fit-content;
+    }
+
+    .about-text h5::after{
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      height: 2px;
+      width: 90%;
+      background-color: var(--bs-primary);
+    }
+
+    .about-text p{
+      line-height: 2rem;
+      letter-spacing: normal;
+      color: #4e4e4e;
+    }
+
+
+    /* ------------------------------------------ Services Page --------------------------------------------- */
+    #services-section .card{
+      border-radius: 1rem;
+      border: 0;
+      padding: 2.5rem .5rem;
+      background: var(--bs-white);
+    }
+    
+    #services-section .card i{
+      transition: all 500ms ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      width: 6rem;
+      height: 6rem;
+      box-shadow: 0 0 0 10px #0078ff;
+      border-radius: 50%;
+    }
+
+    #services-section .card:hover i{
+      color: var(--bs-white);
+      background-color: var(--bs-primary);
+      box-shadow: 0 0 0 10px #98bfec;
+    }
+
+        /* ------------------------------------------ Statistics Page --------------------------------------------- */
+        #statistics-section{
+          background-image: url(../images/post-3.jpg);
+          background-size: cover;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+          position: relative;
+          padding: 2rem 0;
+        }
+
+        #statistics-section::after{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #0078ffa1;
+        }
+
+        #statistics-section .card{
+          border: 0;
+          padding: 2.5rem .5rem;
+          background-color: transparent;
+          color: var(--bs-light);
+          z-index: 2;
+        }
+        
+        #statistics-section .card i{
+          transition: all 500ms ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 3rem;
+          width: 4rem;
+          height: 4rem;
+          box-shadow: 0 0 0 10px var(--bs-light);
+          color: var(--bs-light);
+          border-radius: 50%;
+        }
+
+        /* ------------------------------------------ PORTFOLIO Page --------------------------------------------- */
+        #portfolio-section .card{
+          border-radius: 1rem;
+          border: 0;
+          background: var(--bs-white);
+          overflow: hidden;
+        }
+        
+        #portfolio-section .card i{
+          transition: all 500ms ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          width: 2rem;
+          height: 2rem;
+          margin-right: 1rem;
+        }
+
+        #portfolio-section .card img{
+          transition: all .3s ease-out;
+        }
+
+        #portfolio-section .card:hover img{
+          transform: scale(1.3);
+        }
+
+
+/* ------------------------------------------ Testmonial Page --------------------------------------------- */
+      #testmonial-section{
+        background-image: url(../images/overlay-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: relative;
+        padding: 2rem 0;
+        height: 60vh;
+        color: var(--bs-white);
+      }
+
+      #testmonial-section::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0078ffa1;
+      }
+
+      #testmonial-section .carousel-item{
+        z-index: 2;
+      }
+
+
+      #testmonial-section .carousel{
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+      } 
+
+      #testmonial-section .testmonial-item img{
+        width: 10rem;
+        height:10rem;
+        border-radius: 50%;
+        margin-bottom: 1rem;
+      }
+
+      #testmonial-section .carousel-indicators button{
+        height: .75rem;
+        width: .75rem;
+      }
+
+
+      /* ------------------------------------------ Blog Page --------------------------------------------- */
+
+      #blog-section .img-container{
+        position: relative
+      }
+
+      #blog-section .img-container .img-desc{
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        font-size: .75rem;
+        text-transform: uppercase;
+        font-weight: 500;
+      }
+
+      #blog-section .card-footer img{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+      }
+
+
+
+      /* ------------------------------------------ Contact Page --------------------------------------------- */
+      #contact-section{
+        background-image: url(../images/overlay-bg.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        position: relative;
+        padding: 4rem 0;
+        height: 100vh;
+      }
+
+      @media (max-width:1199.9px) {
+        #contact-section{
+        height: fit-content;
+        }
+      }
+      #contact-section::after{
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #0078ffa1;
+      }
+
+      #contact-section .container{
+        position: relative;
+        z-index: 2;
+      }
+
+      #contact-section .container-fluid{
+        position: relative;
+        z-index: 2;
+      }
+
+     #contact-section .section-heading{
+        text-align: start;
+        padding-bottom: 2rem;
+        }
+        
+    #contact-section .section-heading h2{
+          width: fit-content;
+          font-size: 1.5rem;
+          font-weight: 700;
+          line-height: 2rem;
+          text-transform: uppercase;
+          position: relative;
+        }
+        
+        
+        #contact-section .section-heading h2::after{
+          content: "";
+          position: absolute;
+          top: 100%;
+          left: 0%;
+          width: 70%;
+          height: .25rem;
+          background-color: var(--bs-primary);
+        }
+
+        #contact-section .get-in-touch p{
+          font-size: 1.3rem;
+          line-height: 1.8rem;
+          color: var(--bs-secondary);
+          font-weight: 300;
+        }
+
+        #contact-section .get-in-touch .contact-details{
+          margin-top: 1rem;
+        }
+
+        #contact-section .get-in-touch .contact-details .contact-item{
+          margin:1rem 0
+        }
+
+        #contact-section .get-in-touch .contact-details .contact-item i{
+          color: var(--bs-primary);
+          margin-right: .5rem;
+        }
+
+        #contact-section .get-in-touch .social-container i{
+          transition: all .25s ease;
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 2rem;
+          width: 3rem;
+          height: 3rem;
+          border-radius: 50%;
+          border:.25rem solid var(--bs-primary)
+        }
+
+        .fa-facebook-f:hover{
+          color:#4267B2;
+        }
+
+        .fa-twitter:hover{
+          color: #1DA1F2;
+        }
+        .fa-instagram:hover{
+          color: #F56040;
+        }
+
+        .fa-linkedin-in:hover{
+          color: #0e76a8;
+        }
+        
+
+      /* ------------------------------------------ Footer Page --------------------------------------------- */
+        footer{
+          background-color: #0165d8;
+          box-shadow: -5px 0px 8px #888888;
+        }
+        
